@@ -27,3 +27,5 @@ target/
 .idea/
 .vscode/
 *.sw*
+*.iml
+java/dependency-reduced-pom.xml
