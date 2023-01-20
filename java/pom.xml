@@ -7,8 +7,8 @@
 
     <groupId>cn.shafish</groupId>
     <artifactId>java</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging> <!-- 资源坐标 -->
+    <version>1.0-SNAPSHOT</version> <!-- 资源坐标 -->
+    <packaging>pom</packaging>
     <name>code repository</name>
     <modules>
         <module>maven</module>
@@ -28,5 +28,35 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>11</source>
+                        <target>11</target>
+                        <encoding>utf-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-source</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
